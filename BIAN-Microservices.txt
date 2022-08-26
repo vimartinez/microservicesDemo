@@ -1,0 +1,94 @@
+https://bian.org/semantic-apis/
+https://github.com/bian-official/public
+https://modelapi.bian.org/index.html
+https://app.swaggerhub.com/apis/BIAN-3/CurrentAccount/10.0.0#/
+https://www.postman.com/trusoftng/workspace/bian/request/973302-abcac679-6b71-4510-9371-e724791985d6
+https://github.com/swagger-api/swagger-codegen
+https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen-maven-plugin
+
+https://www.youtube.com/watch?v=QQaFKGU8oi4&ab_channel=SimpleProgramming
+https://www.youtube.com/watch?v=M19XC0zJUrA&ab_channel=JavaTechie
+https://www.youtube.com/watch?v=BnknNTN8icw&ab_channel=DailyCodeBuffer
+https://zipkin.io/
+
+
+cd D:\Java\BIAN-microservices\eurekaserver
+cd D:\Java\BIAN-microservices\adminserver
+cd D:\Java\BIAN-microservices\configserver
+cd D:\Java\BIAN-microservices\zipkinserver
+
+mvnw spring-boot:run
+ctrl-c
+java -jar zipkin-server-2.23.16-exec.jar
+
+1.- Generar microservicio de registro y discovery Eureka Server 
+2.- Generar microservicio de administracion Admin Server (spring boot admin server) 
+3.- Generar el repo de config y archivos para cada ambiente D:\Java\BIAN-microservices\configserverrepo  
+4.- Generar microservicio de configuracion Config Server (spring cloud config server) 
+5.- Habilitar microservicio traceo y log Zipkin - Sleuth  
+6.- Generar microservicio API Gateway con circuit braker, cache, 
+7.- Configurar Keycloak, realms, roles, clientes, usuarios
+8.- Generar migroservicio IdentityAdapter y conectarlo con keycloak
+9.- Generar microservicios de negocio
+	log
+	swagger
+	controllerAdvice
+10- Dockerizar y Kubernetear para auto escalamiento
+	
+http://localhost:8761/
+http://localhost:8762/
+http://localhost:8888/
+http://localhost:9411/
+http://localhost:8701/swagger-ui/index.html#/
+http://localhost:8701/h2-console
+http://localhost:8080/admin/master/console/#/realms/HBAR-MDW
+
+
+api gateway autenticacion y autorizacion keycloak, circuit braker, resilience 4j
+
+https://resilience4j.readme.io/docs/getting-started-3
+https://www.youtube.com/watch?v=czWbpqC1fLY&list=PL4bT56Uw3S4yTSw5Cg1-mhgoS85fVeFkT&ab_channel=LuigiCode
+
+
+https://bian.org/deliverables/bian-portal/
+https://bian-modelapisandbox.azurewebsites.net/index.html
+https://bian.org/semantic-apis/
+https://bian.org/semantic-apis/credit-management/
+https://app.swaggerhub.com/apis/BIAN-3/CreditManagement/10.0.0#/EvaluateCreditPricingAssessmentResponse
+https://app.swaggerhub.com/apis/BIAN-3/CustomerOffer/10.0.0#/BQ%20-%20ProductInitialization/UpdateProductInitialization
+https://app.swaggerhub.com/apis/BIAN-3/CustomerProductsandServices/10.0.0#/CustomerProductsandServicesOutcome
+
+
+https://www.keycloak.org/docs/latest/server_admin/#_admin_permissions
+Infra
+http://localhost:8080/realms/master/protocol/openid-connect/auth?client_id=security-admin-console&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fadmin%2Fmaster%2Fconsole%2F%23%2Frealms%2FHBAR-MDW&state=1539f7fd-5d40-4b7b-8f1f-086a170b8e90&response_mode=fragment&response_type=code&scope=openid&nonce=48d0dcfc-e4f5-46db-b090-4ed965540225&code_challenge=GJAY-H6sMlo8HVy-YaOhy87R-A2Z1iXENnOb3AFBUr0&code_challenge_method=S256
+http://localhost:8761/
+http://host.docker.internal:8762/wallboard
+http://localhost:8888/login
+http://localhost:8702/h2-console/login.jsp?jsessionid=77165f640c47e1d82919c45e4d3d9d4a
+http://localhost:8703/swagger-ui/index.html#/customer-offer-rest-controller/addCustomerLoan
+
+Swagger
+http://localhost:8701/swagger-ui/index.html#/customer-rest-controller/getAllCurrentAccountsByUserId
+http://localhost:8702/swagger-ui/index.html#/current-account-rest-controller/getAllCurrentAccounts
+http://localhost:8703/swagger-ui/index.html#/customer-offer-rest-controller/addCustomerLoan
+http://localhost:8704/swagger-ui/index.html#/credit-management-rest-controller/VerifyCustomerCredit
+http://localhost:8705/swagger-ui/index.html#/financial-accounting-controller/VerifyFinancialAccounting
+http://localhost:8706/swagger-ui/index.html#/customer-products-and-services-rest-controller/AddProduct
+http://localhost:8708/swagger-ui/index.html#/consumer-loan-rest-controller/getAllConsumerLoan
+
+
+Puntos a considerar
+API Gateway segurizado con keycloak
+
+
+bat
+@echo off
+title Eureka Server
+echo Server Eureka de descubrimiento y registro de microservicios
+echo.
+echo.
+echo.
+pause
+cd eurekaserver
+mvnw spring-boot:run

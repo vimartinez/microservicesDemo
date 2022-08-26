@@ -1,0 +1,44 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+
+spring:
+ cloud:
+    gateway:
+      routes:
+      - id: currentaccount-security
+        uri: lb://current-account-api
+        predicates:
+        - Path=/currentaccount/**
+        filters:
+        - name: AuthenticationFilter
+      
+      - id: customer-api
+        uri: lb://customer-api
+        predicates:
+        - Path=/customer/**
+      - id: current-account-api
+        uri: lb://current-account-api
+        predicates:
+        - Path=/currentaccount/**
+      - id: customer-offer-api
+        uri: lb://customer-offer-api
+        predicates:
+        - Path=/customeroffer/**
+      - id: credit-management-api
+        uri: lb://credit-management-api
+        predicates:
+        - Path=/creditmanagement/**
+      - id: financial-accounting-api
+        uri: lb://financial-accounting-api
+        predicates:
+        - Path=/financial-accounting/**
+      - id: customer-prodsandserv-api
+        uri: lb://customer-prodsandserv-api
+        predicates:
+        - Path=/customerproductsandservices/**
+      - id: consumer-loan-api
+        uri: lb://consumer-loan-api
+        predicates:
+        - Path=/consumer-loan/**
